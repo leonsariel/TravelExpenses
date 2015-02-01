@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.travelexpense.MainActivity" >
+    <item android:id="@+id/editExpense" android:title="Edit Expenses" android:onClick="editClaims"></item>
+    <item android:id="@+id/summary" android:title="Costs Summary"></item>
+
+</menu>
