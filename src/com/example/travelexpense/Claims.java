@@ -33,6 +33,23 @@ public class Claims {
 		return this.des;
 	}
 	
+	public String toString() {
+		return getName();
+	}
 	
+	// used to get the start date of the claim
+	public int toStart() {
+		return getStart();
+	}
+	
+	// used to get the end date of the claim
+	public int toEnd() {
+		return getEnd();
+	}
+	
+	// used to get the details of the claim
+	public String toDes() {
+		return getDes();
+	}
 
 }

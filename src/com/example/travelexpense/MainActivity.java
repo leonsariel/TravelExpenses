@@ -8,6 +8,8 @@ import java.util.Collection;
 import java.util.Collections;
 
 
+
+
 import android.annotation.SuppressLint;
 //import ca.ualberta.cs.R;
 import android.app.Activity;
@@ -16,6 +18,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,31 +40,32 @@ public class MainActivity extends Activity {
 	 ListView listView = (ListView) findViewById(R.id.cliam_listView);
      Collection<Claims> claims = ClaimListController.getClaimList().getClaims();
    
-     // not going to change after b/c it is final
+
      final ArrayList<Claims> list = new ArrayList<Claims>(claims);
-     // this will sort our list in order of start dates
-     //Collections.sort(list);
      final ArrayAdapter<Claims> claimAdapter = new ArrayAdapter<Claims>(this, android.R.layout.simple_list_item_1, list);
      listView.setAdapter(claimAdapter);
      
-     // now we will update so that our adapter knows that it needs to display new items
-     // observer pattern. whenever claim list changes we update
+
      ClaimListController.getClaimList().addListener(new Listener() {
      	public void update() {
      		list.clear();
      		Collection<Claims> claims = ClaimListController.getClaimList().getClaims();
      		list.addAll(claims);
-     		// sort our list so that start date items are at the top
-     		//Collections.sort(list);
      		claimAdapter.notifyDataSetChanged();
      	}
      });
+     
+     listView.setOnItemLongClickListener(new OnItemLongClickListener() {
+    	 public boolean onItemLongClick(AdapterView<?> adapterView,View view, int position , long id){
+    		 Toast.makeText(MainActivity.this,"Delete"+ list.get(position).toString(), Toast.LENGTH_SHORT).show();
+    		 return false;
+    	 }
+	});
 	}
 	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
