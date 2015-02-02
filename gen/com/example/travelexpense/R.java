@@ -25,23 +25,33 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int Add_ClaimText=0x7f08000b;
+        public static final int Add_ItemText=0x7f080019;
+        public static final int Add_itemText=0x7f08000c;
         public static final int Return=0x7f080009;
-        public static final int action_settings=0x7f08000f;
+        public static final int Summary=0x7f08000e;
+        public static final int Text_from=0x7f08000f;
+        public static final int Text_to=0x7f080004;
+        public static final int action_settings=0x7f08001a;
         public static final int addButton=0x7f080001;
-        public static final int add_Claim_Button=0x7f08000a;
+        public static final int add_item_Button=0x7f08000a;
         public static final int approve=0x7f080003;
-        public static final int back_to_main=0x7f08000c;
+        public static final int back_to_main=0x7f08000d;
         public static final int claim_name=0x7f080000;
-        public static final int cliam_listView=0x7f08000e;
+        public static final int cliam_listView=0x7f080018;
         public static final int des=0x7f080002;
-        public static final int editExpense=0x7f080010;
+        public static final int editCat=0x7f080012;
+        public static final int editDate=0x7f080010;
+        public static final int editExpense=0x7f08001b;
+        public static final int edit_Describtion=0x7f080014;
+        public static final int edit_cost=0x7f080013;
+        public static final int eidt_cur=0x7f080016;
         public static final int endDate=0x7f080007;
-        public static final int listView1=0x7f08000d;
+        public static final int listItem=0x7f080015;
         public static final int startDate=0x7f080005;
         public static final int submit=0x7f080008;
-        public static final int summary=0x7f080011;
-        public static final int textView1=0x7f080004;
+        public static final int text2=0x7f080017;
+        public static final int textView1=0x7f080011;
+        public static final int text_currency=0x7f08000b;
         public static final int toDate=0x7f080006;
     }
     public static final class layout {

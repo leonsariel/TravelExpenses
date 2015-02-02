@@ -1,4 +1,18 @@
-// Di Meng
+/*
+    TravelExpense App
+    
+    Copyright (C) 2015 Di Meng dmeng@ualberta.ca
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package com.example.travelexpense;
 
 import java.util.ArrayList;
@@ -10,15 +24,24 @@ import java.util.Collections;
 
 
 
+
+
+
+
+
 import android.annotation.SuppressLint;
 //import ca.ualberta.cs.R;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -55,14 +78,54 @@ public class MainActivity extends Activity {
      	}
      });
      
+     
+//     modified base on  Abram Hindle's video https://www.youtube.com/watch?v=7zKCuqScaRE
      listView.setOnItemLongClickListener(new OnItemLongClickListener() {
     	 public boolean onItemLongClick(AdapterView<?> adapterView,View view, int position , long id){
-    		 Toast.makeText(MainActivity.this,"Delete"+ list.get(position).toString(), Toast.LENGTH_SHORT).show();
-    		 return false;
+    		 AlertDialog.Builder abd = new AlertDialog.Builder(MainActivity.this);
+    		 abd.setMessage("Delete?");
+    		 abd.setCancelable(true);
+    		 
+    		 final int finalPosition = position;
+    		 abd.setPositiveButton("Delete", new OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					Claims claim = list.get(finalPosition);
+		    		ClaimListController.getClaimList().deleteClaims(claim);
+					
+				}
+			} );
+    		 
+    		 
+    		 abd.setNegativeButton("Cancel", new OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+    		abd.show();
+    		 return true;
     	 }
 	});
-	}
 	
+	
+	
+	listView.setOnItemClickListener(new OnItemClickListener(){
+
+
+		@Override
+		public void onItemClick(AdapterView<?> adapterView, View view, int position,
+				long id) {
+			// TODO Auto-generated method stub
+			Intent intent = new Intent(MainActivity.this,ListExpenseActivity.class);
+			startActivity(intent);
+			}
+		});
+	}
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -71,7 +134,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void add_Claim_Click(View v){
-		Button add_button = (Button) findViewById(R.id.add_Claim_Button); 
+		Button add_button = (Button) findViewById(R.id.add_item_Button); 
 		
 		//Toast.makeText(this, "add a claim", Toast.LENGTH_SHORT).show();
 		add_button.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +151,7 @@ public class MainActivity extends Activity {
 	
 	//use bundle pass the name in text into AddClaimActivity
 	public void pass_name(){
-		final TextView nameTextView = (TextView)findViewById(R.id.Add_ClaimText);
+		final TextView nameTextView = (TextView)findViewById(R.id.Add_ItemText);
 		// pass name to add_claim_activity
 		String name = nameTextView.getText().toString();
 		Bundle k = new Bundle();

@@ -17,6 +17,19 @@
 //modfied by Abram Hindle's video https://www.youtube.com/watch?v=7zKCuqScaRE	
 package com.example.travelexpense;
 
-public interface Listener {
-	public void update();
+
+public class ItemController {
+	private static ItemList Itemlist = null;
+	
+	static public ItemList getItemList(){
+		if (Itemlist ==null){
+			Itemlist = new ItemList();
+		}
+		return Itemlist;
+	}
+	
+	public void addItem(Items Item){
+		getItemList().addItems(Item);
+	}
+	
 }

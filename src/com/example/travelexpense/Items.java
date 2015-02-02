@@ -13,36 +13,48 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-//modfied by Abram Hindle's video https://www.youtube.com/watch?v=7zKCuqScaRE	
 package com.example.travelexpense;
-import java.util.Date;
 
-public class Claims {
+
+public class Items {
 	protected String name;
-	protected int startDate;
-	protected int endDate;
+	protected String start;
 	protected String des;
+	protected int cost;
+	protected String cat;
+	protected String cur;
 	
-	public void claims(String name,int start,int end,String des){
+	public Items(){
 		this.name = name;
-		this.startDate = start;
-		this.endDate = end;
+		this.start= start;
 		this.des = des;
+		this.cost = (int) cost;
+		this.cat = cat;
+		this.cur = cur;
+		
 		
 	}
 	
+
 	public String getName(){
 		return this.name;
 	}
 	
-	public int getStart()
+	public String getStart()
 	{
-		return this.startDate;
+		return this.start;
 	}
 	
-	public int getEnd(){
-		return this.endDate;
+	public String getCat() {
+		return this.cat;
+	}
+
+	public String getCur() {
+		return this.cur;
+	}
+	
+	public float getCost() {
+		return this.cost;
 	}
 	
 	public String getDes(){
@@ -53,17 +65,26 @@ public class Claims {
 		return getName();
 	}
 	
-
-	public int toStart() {
+	public String toStart() {
 		return getStart();
 	}
 	
-	public int toEnd() {
-		return getEnd();
-	}
+
 
 	public String toDes() {
 		return getDes();
+	}
+	
+	public String toCat(){
+		return getCat();
+	}
+	
+	public float toCost() {
+		return getCost();
+	}
+	
+	public String toCur() {
+		return getCur();
 	}
 
 }

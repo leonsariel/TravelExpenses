@@ -9,12 +9,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/add_Claim_Button" >
+        android:layout_below="@+id/add_item_Button" >
 
     </ListView>
 
     <Button
-        android:id="@+id/add_Claim_Button"
+        android:id="@+id/add_item_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -23,10 +23,10 @@
         android:text="Add Claim" />
 
     <EditText
-        android:id="@+id/Add_ClaimText"
+        android:id="@+id/Add_ItemText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/add_Claim_Button"
+        android:layout_alignBottom="@+id/add_item_Button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:ems="10"

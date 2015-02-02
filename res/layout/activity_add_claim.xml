@@ -25,7 +25,7 @@
         android:layout_alignLeft="@+id/claim_name"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/claim_name"
-        android:onClick="addAction"
+        android:onClick="addItem"
         android:text="Add to Claim" />
 
     <EditText
@@ -41,7 +41,7 @@
         android:inputType="textMultiLine" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/Text_to"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/claim_name"
@@ -53,7 +53,7 @@
         android:id="@+id/startDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/Text_to"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
         android:ems="10"
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/endDate"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignLeft="@+id/Text_to"
         android:text="To" />
 
     <CheckBox
@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/endDate"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_toRightOf="@+id/Text_to"
         android:text="Submit" />
 
     <EditText

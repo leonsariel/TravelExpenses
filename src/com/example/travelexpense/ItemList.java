@@ -18,46 +18,42 @@ package com.example.travelexpense;
 import java.util.ArrayList;
 import java.util.Collection;
 
-
-
-//code is modified based on Abram Hindle's tutorial https://www.youtube.com/watch?v=7zKCuqScaRE
-
-
-public class ClaimList {
-	protected ArrayList<Claims> claimsList;
+public class ItemList {
+	
+	protected ArrayList<Items> ItemsList = null;
 	protected ArrayList<Listener> listeners;
 	
-	public ClaimList(){
-		claimsList = new ArrayList<Claims>();
+	public ItemList(){
+		ItemsList = new ArrayList<Items>();
 		listeners = new ArrayList<Listener>();
 	}
 	
 	
-	public Collection<Claims> getClaims(){
-		return claimsList;
+	public Collection<Items> getItems(){
+		return ItemsList;
 	}
 	
-	public void addClaims(Claims x){
-		claimsList.add(x);
+	public void addItems(Items x){
+		ItemsList.add(x);
 		notifyListeners();
 	}
 	
 
-	public void deleteClaims(Claims y){
-		claimsList.remove(y);
+	public void deleteItems(Items y){
+		ItemsList.remove(y);
 		notifyListeners();
 	}
 	
 	public int size(){
-		return claimsList.size();
+		return ItemsList.size();
 	}
 	
-	public boolean contains(Claims test){
-		return claimsList.contains(test);
+	public boolean contains(Items test){
+		return ItemsList.contains(test);
 	}
 	
 
-// Methods for listeners copy by Abram Hindle's video https://www.youtube.com/watch?v=7zKCuqScaRE	
+// Methods for listeners
 	private void notifyListeners() {
 		for (Listener listener: listeners){
 			listener.update();
@@ -73,9 +69,4 @@ public class ClaimList {
 		listeners.remove(test);
 	}
 
-
-	public void addClaims(String string, int s, int e, String string2) {
-		// TODO Auto-generated method stub
-		
-	}
 }
