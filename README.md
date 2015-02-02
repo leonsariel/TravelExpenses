@@ -6,6 +6,8 @@ lecture section:    b1
 instructor's name:  Wong,Kenny
 lab section:        H03
 =========================================================
+
+this app is manly modified by AbAbram Hindle's video https://www.youtube.com/watch?v=fxjIA4HIruU&list=PL240uJOh_Vb4PtMZ0f7N8ACYkCLv0673O&index=4
 the main activity has a button(add), allow you add claims
 
 ->To Add claims:
