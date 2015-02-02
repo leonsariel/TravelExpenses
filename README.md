@@ -29,8 +29,9 @@ enter the date catagery cost describtion and currency and hit add
 -> to return to the main claim list
 hit back to claims
 
-
-
+=======================================================
+this is the demo video address 
+https://www.youtube.com/watch?v=xftS5es4P1Y
 
 
 ========================================================
